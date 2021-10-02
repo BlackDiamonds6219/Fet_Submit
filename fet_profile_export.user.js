@@ -26,7 +26,7 @@
 FL_ASL = {}; // FetLife ASL Search module
 FL_ASL.CONFIG = {
     'debug': true, // switch to true to debug.
-    'gasapp_url': 'https://script.google.com/macros/s/AKfycbwjOVwMqAeHZ6Bp62DxtG9Iht6qvZZV6-uAexjiKtD3pqpaQXLwnbQh5girnyh5a5KYxQ/exec'
+    'gasapp_url': 'https://script.google.com/macros/s/AKfycbzq2DybHE60zpptUzbOaqPn2DDQWwxwWzzy6teMfvh7PNvZEYYZ4LGhaiSG9laUTAketw/exec'
 };
 
 // Utility debugging function.
