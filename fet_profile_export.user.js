@@ -273,7 +273,7 @@ FL_ASL.ProfileScraper.getBio = function () {
     jQuery($x('//h3[@class][starts-with(., "About me")]')).nextUntil('h3.bottom').each(function () {
         html += jQuery(this).html();
     });
-    return html;
+    return '';
 };
 FL_ASL.ProfileScraper.getWebsites = function () {
     var x = $x('//h3[@class="bottom"][starts-with(., "Websites")]/following-sibling::ul[1]//a');
