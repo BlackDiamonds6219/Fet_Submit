@@ -250,7 +250,7 @@ FL_ASL.ProfileScraper.getLookingFor = function () {
     if (x.length) {
         ret = x[0].innerHTML.split('<br>');
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getRelationships = function () {
     var x = $x('//table//th[starts-with(., "relationship status")]/following-sibling::td//a');
