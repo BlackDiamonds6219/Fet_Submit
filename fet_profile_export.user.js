@@ -130,9 +130,7 @@ FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
     data = 'post_data=' + encodeURIComponent(JSON.stringify(data))
     FL_ASL.log('POSTing profile data '+ data)
-    var url = (FL_ASL.CONFIG.debug)
-        ? FL_ASL.CONFIG.gasapp_url_development
-        : FL_ASL.CONFIG.gasapp_url;    
+    var url = FL_ASL.CONFIG.gasapp_url;    
     FL_ASL.log('Url ' + url)
     GM_xmlhttpRequest({
         'method': 'POST',
