@@ -5,7 +5,7 @@
  */
 // ==UserScript==
 // @name           FetLife Profile Export to BlackDiamonds
-// @version        0.2
+// @version        0.3
 // @description    Allows you to export profile for FetLife user to the BlackDiamonds group.
 // @require        https://code.jquery.com/jquery-2.1.4.min.js
 // @include        https://fetlife.com/*
@@ -26,7 +26,7 @@
 FL_ASL = {}; // FetLife ASL Search module
 FL_ASL.CONFIG = {
     'debug': true, // switch to true to debug.
-    'gasapp_url': 'https://script.google.com/macros/s/AKfycbzq2DybHE60zpptUzbOaqPn2DDQWwxwWzzy6teMfvh7PNvZEYYZ4LGhaiSG9laUTAketw/exec'
+    'gasapp_url': 'https://script.google.com/macros/s/AKfycbw1u1z9LUMxS732tcMGX2G-Zs89tMTWoRcP4IEJevSmihh5qn3clKH30-WGy4-2G90PBw/exec'
 };
 
 // Utility debugging function.
