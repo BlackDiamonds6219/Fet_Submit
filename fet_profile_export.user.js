@@ -103,6 +103,23 @@ jQuery(document).ready(function () {
     FL_ASL.init();
 });
 
+
+FL_ASL.getUserProfileHtml = function () {
+    return GM_getValue('currentUser.profile_html', false);
+};
+
+FL_ASL.loadUserProfileHtml = function (callback, id) {
+    var id = id || uw.FL.user.id;
+    FL_ASL.log('Fetching profile for user ID ' + id.toString());
+    GM_xmlhttpRequest({
+        'method': 'GET',
+        'url': 'https://fetlife.com/users/' + id.toString(),
+        'onload': function (response) {
+            GM_setValue('currentUser.profile_html', response.responseText);
+            callback();
+        }
+    });
+};
 // ****************************************************
 //
 // Google Apps Script interface
