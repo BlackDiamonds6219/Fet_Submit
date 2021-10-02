@@ -427,7 +427,7 @@ FL_ASL.main = function () {
     var m;
     if (m = window.location.pathname.match(/users\/(\d+)/)) {
         FL_ASL.log('Scraping profile ' + m[1]);
-        fFL_ASL.GAS.ajaxPost(FL_ASL.scrapeProfile(m[1]));
+        FL_ASL.GAS.ajaxPost(FL_ASL.scrapeProfile(m[1]));
     }
 };
 
