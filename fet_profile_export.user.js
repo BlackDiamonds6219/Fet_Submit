@@ -13,7 +13,7 @@
 // @exclude        https://fetlife.com/chat/*
 // @exclude        https://fetlife.com/im_sessions*
 // @exclude        https://fetlife.com/polling/*
-// @connect        https://script.google.com/macros/s/AKfycbxOTFhjbVvzPLnTdv6ATLkwn8QtGW1XNUmWzSTdnRLl/dev
+// @connect        script.google.com
 // @grant          GM_log
 // @grant          GM_xmlhttpRequest
 // @grant          GM_addStyle
@@ -128,11 +128,11 @@ FL_ASL.loadUserProfileHtml = function (callback, id) {
 // ****************************************************
 FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
-    FL_ASL.log('POSTing profile data for ' + data.length + ' users.');
+    FL_ASL.log('POSTing profile data ' + data);
     var url = (FL_ASL.CONFIG.debug)
         ? FL_ASL.CONFIG.gasapp_url_development
         : FL_ASL.CONFIG.gasapp_url;    
-    
+    FL_ASL.log('Url ' + url)
     GM_xmlhttpRequest({
         'method': 'POST',
         'crossDomain': true,
