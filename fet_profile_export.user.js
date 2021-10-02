@@ -127,15 +127,17 @@ FL_ASL.loadUserProfileHtml = function (callback, id) {
 // ****************************************************
 FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
+    function dictToURI(dict) {
+        var str = [];
+        for(var p in dict){
+           str.push(encodeURIComponent(p) + "=" + encodeURIComponent(dict[p]));
+        }
+        return str.join("&");
+    }
     var url = FL_ASL.CONFIG.gasapp_url;
-    GM_log(JSON.stringify(data))
-    data = 'post_data=' + encodeURIComponent(JSON.stringify(data))
-    var full_url = url + '?' + data;    
-    
-    FL_ASL.log('Url ' + url)
     GM_xmlhttpRequest({
         'method': 'GET',
-        'url': full_url,
+        'url': url + '?' + dictToURI(data),
         'onload': function (response) {
             FL_ASL.log('GET response received: ' + response.responseText);
         }
