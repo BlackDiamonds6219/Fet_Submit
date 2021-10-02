@@ -13,7 +13,7 @@
 // @exclude        https://fetlife.com/chat/*
 // @exclude        https://fetlife.com/im_sessions*
 // @exclude        https://fetlife.com/polling/*
-// @connect        https://script.google.com/macros/s/AKfycbxOTFhjbVvzPLnTdv6ATLkwn8QtGW1XNUmWzSTdnRLl/dev
+// @connect        script.google.com
 // @grant          GM_log
 // @grant          GM_xmlhttpRequest
 // @grant          GM_addStyle
