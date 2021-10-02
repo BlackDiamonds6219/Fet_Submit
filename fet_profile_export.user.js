@@ -128,7 +128,8 @@ FL_ASL.loadUserProfileHtml = function (callback, id) {
 // ****************************************************
 FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
-    FL_ASL.log('POSTing profile data ' + data);
+    FL_ASL.log('POSTing profile data ')
+    GM_log(data)
     var url = (FL_ASL.CONFIG.debug)
         ? FL_ASL.CONFIG.gasapp_url_development
         : FL_ASL.CONFIG.gasapp_url;    
