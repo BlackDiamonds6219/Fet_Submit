@@ -127,21 +127,18 @@ FL_ASL.loadUserProfileHtml = function (callback, id) {
 // ****************************************************
 FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
+    var url = FL_ASL.CONFIG.gasapp_url;
     data = 'post_data=' + encodeURIComponent(JSON.stringify(data))
-    FL_ASL.log('POSTing profile data '+ data)
-    var url = FL_ASL.CONFIG.gasapp_url;    
+    var full_url = url + '?' + data;    
+    
     FL_ASL.log('Url ' + url)
     GM_xmlhttpRequest({
-        'method': 'POST',
+        'method': 'GET',
         'crossDomain': true,
-        'url': url,
-        'data': data,
+        'url': full_url,
         'dataType': "jsonp",
-        'headers': {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
         'onload': function (response) {
-            FL_ASL.log('POST response received: ' + response.responseText);
+            FL_ASL.log('GET response received: ' + response.responseText);
         },
         'onerror': function (response) {
             FL_ASL.log('Error POSTing to ' + url + ', response received: ' + response.responseText);
