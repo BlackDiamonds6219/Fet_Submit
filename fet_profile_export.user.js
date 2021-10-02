@@ -5,7 +5,7 @@
  */
 // ==UserScript==
 // @name           FetLife Profile Export to BlackDiamonds
-// @version        0.1
+// @version        0.2
 // @description    Allows you to export profile for FetLife user to the BlackDiamonds group.
 // @require        https://code.jquery.com/jquery-2.1.4.min.js
 // @include        https://fetlife.com/*
