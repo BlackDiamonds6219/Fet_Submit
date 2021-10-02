@@ -128,6 +128,7 @@ FL_ASL.loadUserProfileHtml = function (callback, id) {
 FL_ASL.GAS = {};
 FL_ASL.GAS.ajaxPost = function (data)  {
     var url = FL_ASL.CONFIG.gasapp_url;
+    GM_log(JSON.stringify(data))
     data = 'post_data=' + encodeURIComponent(JSON.stringify(data))
     var full_url = url + '?' + data;    
     
@@ -257,7 +258,7 @@ FL_ASL.ProfileScraper.getRelationships = function () {
     for (var i = 0; i < x.length; i++) {
         ret.push(x[i].href.match(/\d+$/)[0]);
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getDsRelationships = function () {
     var x = $x('//table//th[starts-with(., "D/s relationship status")]/following-sibling::td//a');
@@ -265,7 +266,7 @@ FL_ASL.ProfileScraper.getDsRelationships = function () {
     for (var i = 0; i < x.length; i++) {
         ret.push(x[i].href.match(/\d+$/)[0]);
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getBio = function () {
     var html = '';
@@ -280,7 +281,7 @@ FL_ASL.ProfileScraper.getWebsites = function () {
     for (var i = 0; i < x.length; i++) {
         ret.push(x[i].textContent.trim());
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getLastActivity = function () {
     // TODO: Convert this relative date string to a timestamp
@@ -297,7 +298,7 @@ FL_ASL.ProfileScraper.getFetishesInto = function () {
     for (var i = 0; i < x.length; i++) {
         ret.push(x[i].textContent.trim());
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getFetishesCuriousAbout = function () {
     var x = $x('//h3[@class="bottom"][starts-with(., "Fetishes")]/following-sibling::p[2]//a');
@@ -305,7 +306,7 @@ FL_ASL.ProfileScraper.getFetishesCuriousAbout = function () {
     for (var i = 0; i < x.length; i++) {
         ret.push(x[i].textContent.trim());
     }
-    return ret;
+    return ret.join('|');
 };
 FL_ASL.ProfileScraper.getPicturesCount = function () {
     var el = document.getElementById('user_pictures_link');
