@@ -135,14 +135,9 @@ FL_ASL.GAS.ajaxPost = function (data)  {
     FL_ASL.log('Url ' + url)
     GM_xmlhttpRequest({
         'method': 'GET',
-        'crossDomain': true,
         'url': full_url,
-        'dataType': "jsonp",
         'onload': function (response) {
             FL_ASL.log('GET response received: ' + response.responseText);
-        },
-        'onerror': function (response) {
-            FL_ASL.log('Error POSTing to ' + url + ', response received: ' + response.responseText);
         }
     });
 };
