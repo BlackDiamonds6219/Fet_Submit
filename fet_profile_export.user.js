@@ -134,8 +134,10 @@ FL_ASL.GAS.ajaxPost = function (data)  {
     
     GM_xmlhttpRequest({
         'method': 'POST',
+        'crossDomain': true,
         'url': url,
         'data': 'post_data=' + encodeURIComponent(JSON.stringify(data)),
+        'dataType': "jsonp",
         'headers': {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
